@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Suizo de Parchís</title>
+    <link rel="stylesheet" href="parchis.css">
+</head>
+<body>
+    <h1>Torneo Suizo de Parchís</h1>
+    <section id="setup">
+        <h2>Participantes</h2>
+        <form id="players-form" autocomplete="off">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; max-width:320px; margin:0 auto;">
+                <label for="player-name" style="align-self:flex-start; font-weight:500; color:#23408e;">Nombre del jugador:</label>
+                <div style="display:flex; gap:8px; width:100%;">
+                    <input id="player-name" type="text" maxlength="24" style="flex:1; padding:8px 10px; border-radius:6px; border:1.5px solid #b6c6e3; font-size:1em; background:#f7faff;" placeholder="Ej: Juan" />
+                    <button type="button" id="add-player" style="background:#4f8cff;">Añadir</button>
+                </div>
+                <div id="players-list" style="width:100%; min-height:38px; margin-bottom:4px; display:flex; flex-wrap:wrap; gap:6px;"></div>
+                <button type="submit" id="create-tournament">Crear Torneo</button>
+            </div>
+        </form>
+    </section>
+    <section id="tournament" style="display:none;">
+        <h2>Rondas</h2>
+        <div id="rounds-container"></div>
+        <button id="next-round" style="display:none;">Siguiente Ronda</button>
+        <button id="cancel-tournament" style="background:#e53935; margin-left:10px; display:inline-block;">Cancelar Torneo</button>
+        <h2>Clasificación</h2>
+        <table id="standings">
+            <thead>
+                <tr><th>Jugador</th><th>Puntos</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <script src="parchis.js"></script>
+</body>
+</html>
